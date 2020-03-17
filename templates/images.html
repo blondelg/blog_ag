@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- list images -->
+<!-- <div id="links"> -->
+<button class="btn_back" onclick="window.location.href = '{{ url_retour }}';">Retour</button>
+<h1>{{ article_titre }}</h1>
+<div id="links">
+{% for row in ima_grid %}
+  <div class="row">
+  {% for col in row %}
+    <div class="column">
+      <a class="image_link" href="/media/{{ col.1 }}" title="{{ col.3 }}">
+      <img class="image_grid" src="/media/{{ col.0 }}" alt="{{ col.3 }}">
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+</div>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<!-- </div> -->
+
+<!-- <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div class="pagination">
+        {% if ima_grid.has_previous %}
+            <a href="?page=1">&laquo</a>
+            <a href="?page={{ ima_grid.previous_page_number }}">prev</a>
+        {% endif %}
+
+        {% for i in ima_grid.paginator.page_range %}
+          {% if ima_grid.number == i %}
+            <a class="active">{{ i }}</a>
+          {% else %}
+            <a href="?page={{ i }}">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if ima_grid.has_next %}
+            <a href="?page={{ ima_grid.next_page_number }}">next</a>
+            <a href="?page={{ ima_grid.paginator.num_pages }}">&raquo;</a>
+        {% endif %}
+</div> -->
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<button class="btn_back" onclick="window.location.href = '/';">Retour</button>
+<h1>Toutes les vidéos</h1>
+
+<!-- list videos -->
+{% for row in vid_grid %}
+  <div class="row">
+    {% for col in row %}
+    <div class="column_vid_grid">
+      <div class="responsive-grid">
+        <iframe class="video" src="{{ col }}?queue-enable=false" allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endfor %}
+{% endblock %}
