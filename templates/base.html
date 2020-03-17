@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <title>¯\_(ツ)_/¯</title>
+   <link rel="stylesheet" href="{% static 'style.css' %}"/>
+   <link rel="stylesheet" href="{% static 'blueimp-gallery.min.css' %}" />
+   <link rel="shortcut icon" type="image/png" href="{% static 'icon.png' %}"/>
+
+   <meta charset="utf-8">
+</head>
+<body>
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+<script type="text/javascript" src="{% static 'blueimp-gallery.min.js' %}"></script>
+<script>
+  document.getElementById('links').onclick = function(event) {
+    event = event || window.event
+    var target = event.target || event.srcElement,
+      link = target.src ? target.parentNode : target,
+      options = { index: link, event: event },
+      links = this.getElementsByTagName('a')
+    blueimp.Gallery(links, options)
+  }
+</script>
+
+</body>
+</html>

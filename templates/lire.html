@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Article -->
+<button class="btn_back" onclick="window.location.href = '/';">Retour</button>
+
+<h1>{{ article }}</h1>
+<p class="infos">Rédigé par {{ article.art_auteur }}, le {{ article.art_date|date:"DATE_FORMAT" }}</p>
+<div class="container_lire">
+  {{ article.art_contenu|safe }}
+</div>
+
+
+<i>20 photos au hasard :</i>
+<!-- list images -->
+<div id="links">
+{% for row in ima_grid %}
+  <div class="row">
+  {% for col in row %}
+    <div class="column">
+      <a class="image_link" href="/media/{{ col.1 }}" title="{{ col.3 }}">
+      <img class="image_grid" src="/media/{{ col.0 }}" alt="{{ col.3 }}">
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+</div>
+
+<br>
+<button class="btn_more" onclick="window.location.href = '/images/{{ article.id }}';">Afficher toute les images de l'article</button>
+<br>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<br>
+
+{% endblock %}

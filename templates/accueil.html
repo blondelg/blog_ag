@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>AG-News</h1>
+
+<!-- google map -->
+<iframe class="map_accueil" frameborder="0" style="border:0" src="https://www.google.com/maps/d/embed?mid=1roaueNMKWbh4NSGNRB39T_rHGsgQ3BlD"></iframe>
+
+<!-- list articles -->
+<h2>Articles<hr></h2>
+
+{% for row in art_grid %}
+<div class="row">
+{% for col in row %}
+<div class="column">
+  <div class="responsive-grid">
+    <a href="{% url 'lire' col.3 %}">
+        <img src="/media/{{ col.1 }}">
+        <div class="titre-article">
+          <h3>{{ col.0 }}</h3>
+        </div>
+    </a>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+
+<!-- list videos -->
+<h2>Dernières vidéos<hr></h2>
+{% for row in vid_grid %}
+  <div class="row">
+    {% for col in row %}
+    <div class="column_vid_grid">
+      <div class="responsive-grid">
+        <iframe class="video" src="{{ col }}?queue-enable=false" allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+<button class="btn_more" onclick="window.location.href = '/videos';">Afficher toute les vidéos</button>
+
+<!-- random list images -->
+<h2>20 images au hasard<hr></h2>
+<div id="links">
+{% for row in ima_grid %}
+  <div class="row">
+  {% for col in row %}
+    <div class="column">
+      <a class="image_link" href="/media/{{ col.1 }}" title="{{ col.3 }}">
+      <img class="image_grid" src="/media/{{ col.0 }}" alt="{{ col.3 }}">
+      </a>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+</div>
+
+<button class="btn_more" onclick="window.location.href = '/images';">Afficher toute les images</button>
+<br>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+{% endblock %}

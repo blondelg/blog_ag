@@ -1,0 +1,22 @@
+# Exclude everythings
+*
+
+# Except
+!.gitignore
+!settings.py
+!urls.py
+!admin.py
+!apps.py
+!forms.py
+!models.py
+!tests.py
+!views.py
+!mini.sh
+!accueil.html
+!base.html
+!lire.html
+!style.css
+#!/polices/*
+
+# Even in sub dirs
+!*/

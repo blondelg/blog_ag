@@ -1,0 +1,347 @@
+
+
+@font-face {
+    font-family: 'Znikomit';
+    src: url('Znikomit.otf') format('truetype');
+}
+
+body {
+  font-family: Znikomit;
+  font-weight: bold;
+}
+
+h2 {
+
+}
+
+.btn_back {
+ border: none; /* Remove borders */
+ color: black; /* Add a text color */
+ padding: 14px 28px; /* Add some padding */
+ cursor: pointer; /* Add a pointer cursor on mouse-over */
+ font-family: Znikomit;
+ font-weight: bold;
+ position: relative;
+ float:right;
+ cursor: pointer;
+ right:0;
+ font-size: 110%;
+}
+
+.btn_more {
+ border: none; /* Remove borders */
+ color: black; /* Add a text color */
+ padding: 14px 28px; /* Add some padding */
+ cursor: pointer; /* Add a pointer cursor on mouse-over */
+ font-family: Znikomit;
+ font-weight: bold;
+ margin:auto;
+ display:block;
+ font-size: 110%;
+
+}
+
+.default {background-color: #e7e7e7; color: black;} /* Gray */
+.default:hover {background: #ddd;}
+
+/* main container for all pages*/
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.return {
+  position: relative;
+  float:right;
+  cursor: pointer;
+  right:0;
+}
+
+.map_accueil{
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+/* container image presentation */
+.responsive-grid {
+  position: relative;
+  margin: 0 auto; /* Center it */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1% 2%;
+}
+
+.responsive-grid .video {
+width: 100%;
+height: 300px;
+}
+
+.responsive-grid img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.responsive-grid:hover {opacity: 0.7;}
+
+.responsive-grid .titre-article {
+  position: absolute; /* Position the background text */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #E3E3E3;
+  width: 97.5%; /* Full width */
+  height: 25%;
+  top:48%;
+  left: 50%;
+  transform: translate(-50%,100%);
+  text-align: center;
+}
+
+/* Responsive grid */
+.column {
+ float: left;
+ width: 25%;
+}
+
+.column_image_grid {
+ float: left;
+ width: 25%;
+}
+
+.column_vid_grid{
+ float: left;
+ width: 50%;
+}
+
+/* Responsive image grid */
+.row {
+  display: block;
+  flex-wrap: wrap;
+}
+
+.image_link {
+  display:inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.image_grid:hover {opacity: 0.7;}
+
+.image_grid {
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Clear floats */
+.row:after {
+ content: "";
+ display: table;
+  clear: both;
+}
+
+/* pagination of images */
+.pagination {
+  position:relative;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #181818;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.image-titre:hover {opacity: 0.7;}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* images within articles */
+.img_2_left {
+  box-sizing: border-box;
+  float:left;
+  width: 50%;
+  max-width: 100%;
+  padding-right: 3px;
+  padding-bottom: 1px;
+}
+
+.img_2_right {
+  box-sizing: border-box;
+  float:left;
+  width: 50%;
+  max-width: 100%;
+  padding-left: 3px;
+  padding-bottom: 1px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img_1 {
+  box-sizing: border-box;
+  width: 50%;
+  max-width: 100%;
+  padding-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img_pano {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.image_in {
+  display: block;
+  width:50%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image_in_pano {
+  display: block;
+  width:100%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* having two images side by side*/
+.two_images {
+  display: block;
+  width:49%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+ float: left;
+ padding-left:5px;
+ padding-bottom: 5px;
+}
+
+.container_lire {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+.container_lire p {
+  text-align: justify;
+}
+.contenu {
+  text-align: justify;
+}
+
+.container_map {
+  position: relative;
+  /* margin-top:-30px; */
+}
+.container_map iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1170px) {
+
+  p {
+    font-size:20px;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 35px;
+    margin-top: 5%;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .map_accueil{
+    width: 100%;
+    height: 300px;
+  }
+
+ .column {
+   width: 50%;
+ }
+
+ .column_image_grid {
+   width: 50%;
+ }
+
+ .column_vid_grid{
+  float: left;
+  width: 100%;
+ }
+
+ .container {
+   margin: auto;
+   width: 100%;
+ }
+
+ .responsive-grid .video {
+ width: 100%;
+ height: 400px;
+ }
+
+ .img_2_left {
+   width: 100%;
+   padding-right: 0px;
+ }
+
+ .img_2_right {
+   width: 100%;
+   padding-left: 0px;
+ }
+
+ .img_1 {
+   width: 100%;
+ }
+
+ .image_in {
+   width:100%;
+ }
+
+ .two_images {
+   padding:3px;
+   width:100%;
+   height:auto;
+ }
+
+ .pagination a {
+   font-size: 30px;
+ }
+}
