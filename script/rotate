@@ -1,0 +1,15 @@
+#!/bin/bash
+path=/home/a2019g/blog_ag/blog_app/media/photos
+file $path/$1
+convert $path/$1 -rotate 90 $path/$1
+file $path/$1
+
+path=/home/a2019g/blog_ag/blog_app/media/photos/raw
+file $path/$1
+convert $path/$1 -rotate 90 $path/$1
+file $path/$1
+
+path=/home/a2019g/blog_ag/blog_app/media/photos/mini
+file $path/$1
+convert $path/$1 -rotate 90 $path/$1
+file $path/$1

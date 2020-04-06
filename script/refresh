@@ -1,0 +1,4 @@
+source ~/.virtualenvs/blog_ag/bin/activate
+python ~/blog_ag/manage.py collectstatic
+~/init/nginx reload
+~/init/blog_ag reload
