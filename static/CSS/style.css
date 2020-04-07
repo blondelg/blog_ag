@@ -17,6 +17,7 @@ h2 {
 .btn_back {
  border: none; /* Remove borders */
  color: black; /* Add a text color */
+ background-color: #99aab5;
  padding: 14px 28px; /* Add some padding */
  cursor: pointer; /* Add a pointer cursor on mouse-over */
  font-family: Znikomit;
@@ -31,6 +32,7 @@ h2 {
 .btn_more {
  border: none; /* Remove borders */
  color: black; /* Add a text color */
+ background-color: #99aab5;
  padding: 14px 28px; /* Add some padding */
  cursor: pointer; /* Add a pointer cursor on mouse-over */
  font-family: Znikomit;
