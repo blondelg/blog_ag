@@ -10,6 +10,41 @@ body {
   font-weight: bold;
 }
 
+h2 {
+
+}
+
+.btn_back {
+ border: none; /* Remove borders */
+ color: black; /* Add a text color */
+ background-color: #99aab5;
+ padding: 14px 28px; /* Add some padding */
+ cursor: pointer; /* Add a pointer cursor on mouse-over */
+ font-family: Znikomit;
+ font-weight: bold;
+ position: relative;
+ float:right;
+ cursor: pointer;
+ right:0;
+ font-size: 110%;
+}
+
+.btn_more {
+ border: none; /* Remove borders */
+ color: black; /* Add a text color */
+ background-color: #99aab5;
+ padding: 14px 28px; /* Add some padding */
+ cursor: pointer; /* Add a pointer cursor on mouse-over */
+ font-family: Znikomit;
+ font-weight: bold;
+ margin:auto;
+ display:block;
+ font-size: 110%;
+
+}
+
+.default {background-color: #e7e7e7; color: black;} /* Gray */
+.default:hover {background: #ddd;}
 
 /* main container for all pages*/
 .container {
@@ -79,6 +114,26 @@ height: 300px;
  width: 50%;
 }
 
+/* Responsive image grid */
+.row {
+  display: block;
+  flex-wrap: wrap;
+}
+
+.image_link {
+  display:inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.image_grid:hover {opacity: 0.7;}
+
+.image_grid {
+  box-sizing: border-box;
+  vertical-align: middle;
+  width: 100%;
+}
+
 /* Clear floats */
 .row:after {
  content: "";
@@ -86,15 +141,8 @@ height: 300px;
   clear: both;
 }
 
-/* Style the Image Used to Trigger the Modal */
-.image-titre {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 /* pagination of images */
 .pagination {
-  /* display: inline-block; */
   position:relative;
   padding-top: 10px;
   text-align: center;
@@ -102,12 +150,8 @@ height: 300px;
 
 .pagination a {
   color: black;
-  /* float: left; */
-  /* position: relative; */
   padding: 8px 16px;
   text-decoration: none;
-
-
 }
 
 .pagination a.active {
@@ -119,121 +163,56 @@ height: 300px;
 
 .image-titre:hover {opacity: 0.7;}
 
-/* The Modal (background) */
-.modal {
-  position: relative;
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (Image) */
-.modal-content {
-margin: auto;
-  display: block;
-  width: 100%;
-  max-width: 700px;
-  top:5%;
-}
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-.caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.mySlides .caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
 @keyframes zoom {
   from {transform:scale(0)}
   to {transform:scale(1)}
 }
 
-/* The Close Button */
-.close {
-  position: absolute;
-  height:14px;
-  top:0%;
-  right: 2%;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* settings for zoom slideshow */
-.mySlides {
-  position: relative;
-  width:100%;
-  height:auto;
-  display: block;
-  margin-top: 0%;
-}
-
-/* Next & previous buttons */
-.img_slideshow {
-  position: relative;
-  margin: auto;
+/* images within articles */
+.img_2_left {
+  box-sizing: border-box;
+  float:left;
+  width: 50%;
   max-width: 100%;
-  max-height: 50%;
+  padding-right: 3px;
+  padding-bottom: 1px;
 }
 
-.container_im {
+.img_2_right {
+  box-sizing: border-box;
+  float:left;
+  width: 50%;
   max-width: 100%;
-  position: relative;
+  padding-left: 3px;
+  padding-bottom: 1px;
 }
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.img_1 {
+  box-sizing: border-box;
+  width: 50%;
+  max-width: 100%;
+  padding-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.img_pano {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 1px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
 }
 
 .image_in {
@@ -253,7 +232,6 @@ margin: auto;
 }
 
 /* having two images side by side*/
-
 .two_images {
   display: block;
   width:49%;
@@ -271,7 +249,6 @@ margin: auto;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  /* width: 1170px; */
   box-sizing: border-box;
 }
 
@@ -284,7 +261,7 @@ margin: auto;
 
 .container_map {
   position: relative;
-  margin-top:-30px;
+  /* margin-top:-30px; */
 }
 .container_map iframe {
   position: relative;
@@ -307,6 +284,7 @@ margin: auto;
 
   h2 {
     font-size: 35px;
+    margin-top: 5%;
   }
 
   h3 {
@@ -341,12 +319,18 @@ margin: auto;
  height: 400px;
  }
 
- .modal-content {
+ .img_2_left {
    width: 100%;
-   position: absolute;
-   margin-left: auto;
-   margin-right: auto;
-   top:0;
+   padding-right: 0px;
+ }
+
+ .img_2_right {
+   width: 100%;
+   padding-left: 0px;
+ }
+
+ .img_1 {
+   width: 100%;
  }
 
  .image_in {
@@ -359,31 +343,7 @@ margin: auto;
    height:auto;
  }
 
- .mySlides {
-   position: fixed;
-   margin-top: 0%;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   max-width: 100%;
-   max-height: 100%;
- }
-
- .prev, .next {
-   font-size: 30px;
- }
-
- .close {
-   font-size: 60px;
- }
-
- .caption {
-   font-size: 25px;
- }
-
  .pagination a {
    font-size: 30px;
  }
-
 }
