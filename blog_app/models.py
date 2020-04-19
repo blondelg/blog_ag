@@ -59,7 +59,7 @@ class Images(models.Model):
 @receiver(post_save, sender=Images)
 def process_raw_images(sender, **kwargs):
     image = os.path.basename(str(kwargs.get('instance')))
-    os.system(settings.BASE_DIR + "/script/add_photo.sh " + image)
+    os.system(os.path.join(settings.BASE_DIR, "/script/add_photo.sh") + " " + image)
 
 @receiver(post_delete, sender=Images)
 def delete_side_images(sender, **kwargs):
