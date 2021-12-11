@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils import timezone
 from django.db.models import Q
@@ -56,15 +57,17 @@ class Images(models.Model):
 
         return self.ima_image.name
 
-@receiver(post_save, sender=Images)
-def process_raw_images(sender, **kwargs):
-    image = os.path.basename(str(kwargs.get('instance')))
-    os.system(os.path.join(settings.BASE_DIR, "/script/add_photo.sh") + " " + image)
-
-@receiver(post_delete, sender=Images)
-def delete_side_images(sender, **kwargs):
-    image = os.path.basename(str(kwargs.get('instance')))
-    photo_path = os.path.join(settings.MEDIA_ROOT,'photos')
-    print(photo_path)
-    os.remove(os.path.join(photo_path, image))
-    os.remove(os.path.join(photo_path,'mini', image))
+# @receiver(post_save, sender=Images)
+# def process_raw_images(sender, **kwargs):
+#     image = os.path.basename(str(kwargs.get('instance')))
+#     #os.system(os.path.join(settings.BASE_DIR, "/script/add_photo.sh") + " " + image)
+#     os.system("/home/a2019g/demo-blog/script/add_photo.sh " + image)
+#
+#
+# @receiver(post_delete, sender=Images)
+# def delete_side_images(sender, **kwargs):
+#     image = os.path.basename(str(kwargs.get('instance')))
+#     photo_path = os.path.join(settings.MEDIA_ROOT,'photos')
+#     print(photo_path)
+#     os.remove(os.path.join(photo_path, image))
+#     os.remove(os.path.join(photo_path,'mini', image))
