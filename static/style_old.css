@@ -1,0 +1,631 @@
+@font-face {
+  font-family: 'comfortaa';
+  src: url('comfortaa/Comfortaa-Regular.ttf')  format("truetype");
+}
+
+@font-face {
+  font-family: 'nordica';
+  src: url('nordica/NordicaRegular.otf')  format("truetype"),
+       local('nordica');
+}
+
+@font-face {
+  font-family: 'caviar_dreams';
+  src: url('/polices/CaviarDreams.ttf')  format("truetype"),
+       local('caviar_dreams');
+}
+
+body {
+  font-family: comfortaa;
+}
+
+/* 1 - navbar settings ----------------------------------------------------- */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+.sticky + .content {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav a{
+    font-size:10px;
+  }
+
+  .sticky + .content {
+    padding-top: 41px;
+  }
+
+}
+
+/* 2 - title and presentation image settings ----------------------------------------------------- */
+.container_acceuil {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1170px;
+  box-sizing: border-box;
+}
+
+.map_accueil {
+    /* margin-top:52px; */
+    width: 1140px;
+    height: 300px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+@media screen and (max-width: 1170px) {
+  .container_acceuil {
+    width:100%;
+  }
+
+  .map_accueil {
+    width:100%;
+    height:200px;
+    /* margin-top:41px; */
+  }
+
+  .titre_blog h1 {
+    font-size: 25px;
+  }
+}
+
+.image_titre {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top:52px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.titre_blog h1 {
+  text-align: center;
+}
+
+.container .titre_blog {
+  position: relative; /* Position the background text */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #E3E3E3;
+  width: 100%; /* Full width */
+  padding: 10px; /* Some padding */
+  text-align: center;
+  height: 95%;
+  top:50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .container .titre_blog h1{
+    font-size:15px;
+    margin-top: -0.4%
+  }
+  .container .titre_blog {
+    height: 40px;
+
+  }
+  .image_titre {
+    margin-top:42px;
+  }
+  .container {
+    margin-bottom:-10%;
+  }
+}
+
+
+/* 3 - title for article in home page settings ----------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size:15px;
+  }
+}
+
+/* ############################################################# */
+
+/*video */
+.container_map h3 {
+  position: relative;
+  padding-top:4%;
+}
+
+/* container work in progess gif*/
+.container_wip_picture  {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container_wip_picture img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+
+  .container_wip_picture img {
+    width: 100%;
+    height: auto;
+  }
+
+    .container_wip_picture h1 {
+
+      font-size: 20px;
+    }
+
+  }
+
+
+
+.container_wip_picture h1 {
+  text-align: center;
+}
+
+
+
+/* settings for home article presentations */
+.container_image_presentation {
+  position: relative;
+  margin-top: 30px;
+}
+
+.image_presentation {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.titre_article_accueil {
+  position:relative;
+}
+
+@media screen and (max-width: 600px) {
+  .titre_article_accueil {
+    font-size:18px;
+  }
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;    margin-bottom: : 3%;
+  background-color: #000000;
+  border-radius: 15px;
+}
+
+.container_image_presentation:hover .overlay {
+  opacity: 0.5;
+}
+
+.text_resume_article {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  width: 95%;
+  height: 95%;
+
+}
+
+
+/* home title and image settings */
+.article {
+  display: block;
+  max-width: 100%;
+  height: 400px;
+  width: 555px;
+  border-radius: 15px;
+}
+
+.image_in {
+  display: block;
+  width:50%;
+  height:auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .image_in {
+    width:100%;
+  }
+}
+
+/* having two images side by side*/
+.two_images {
+  display: block;
+}
+
+.two_images img {
+  display: block;
+ float: left;
+ padding:10px;
+}
+
+@media screen and (max-width: 600px) {
+  .two_images img {
+    padding:3px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .article {
+    max-width: 100%;
+    height: 285px;
+  }
+}
+
+img.article {
+  object-fit: cover;
+}
+
+
+.container_lire {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1170px;
+  box-sizing: border-box;
+}
+
+.container_lire p {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 600px){
+  .container_lire {
+    width:100%;
+  }
+}
+
+/* settings for slideshow */
+/* .row > .column {
+  padding: 4px;
+} */
+.column img {
+  padding: 4px;
+}
+
+@media only screen and (max-width: 600px){
+  .column img {
+    padding: 2px;
+  }
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* settings for zoom slideshow */
+.mySlides img {
+  width:100%;
+  height:auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px -12px;
+  top: -20px;
+  position: absolute;
+  top: -40;
+
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+  width: 100%;
+
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+  width: 50%;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+  width:100%;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* setting for map from google map */
+.container_map {
+  position: relative;
+  margin-top:-30px;
+}
+.container_map iframe {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+@media only screen and (max-width: 600px){
+  .container_map iframe {
+    height: 300px;
+  }
+}
+
+
+/* photo view settings */
+
+  .container_grid_lire {
+    box-sizing: border-box;
+  }
+
+
+  .row_photo {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  .column_photo {
+    -ms-flex: 10%; /* IE 10 */
+    flex: 10%;
+    padding: 0 4px;
+  }
+
+  .column_photo img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width:100%;
+  }
+
+
+  #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #myImg:hover {opacity: 0.7;}
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 850px;
+  }
+
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 5px 0;
+    height: 5px;
+  }
+
+  /* Add Animation */
+  .modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+  }
+
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 600px){
+    .modal-content {
+      width: 100%;
+    }
+  }
+
+
+footer {
+  font-size:10px;
+  position: relative;
+  display:block;
+  padding-top: 40px;
+}
