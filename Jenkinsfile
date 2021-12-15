@@ -11,5 +11,11 @@ ls'''
       }
     }
 
+    stage('docker') {
+      steps {
+        sh 'docker ps'
+      }
+    }
+
   }
 }
